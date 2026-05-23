@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:43:09 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 17:32:15 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 17:50:31 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,24 @@ char	*ft_strncat(char *dest, char *buf, size_t n)
 	char	*new_buffer;
 	size_t	index;
 
+	if (n == 0)
+		return (dest);
 	if (n == (size_t)(-1))
 		new_buffer = malloc(ft_strlen(dest) + ft_strlen(buf) + 1);
 	else
 		new_buffer = malloc(ft_strlen(dest) + n + 1);
 	index = 0;
-	if (n == (size_t)(-1))
+	while (dest[index])
 	{
-		while (*dest)
-			new_buffer[index++] = *dest++;
+		new_buffer[index] = dest[index];
+		index++;
+	}
+	if (n == (size_t)(-1))
 		while (*buf)
 			new_buffer[index++] = *buf++;
-	}
 	else
-	{
-		while (*dest)
-			new_buffer[index++] = *dest++;
 		while (n--)
 			new_buffer[index++] = *buf++;
-	}
 	new_buffer[index] = 0;
 	return (free(dest), dest = new_buffer, dest);
 }
