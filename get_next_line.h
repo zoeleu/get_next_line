@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:43:07 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 18:18:38 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:21:09 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strncat(char *dest, char *buf, size_t n);
 char	*ft_strndup(char *s1, size_t n);
 char	*find_end(char *s1, int str_end);
 char	*cleanup(char **stash_ptr, int clone_stash, char **free_buf);
-char	*initialize_buffer();
+char	*initialize_buffer(void);
 
 #endif
