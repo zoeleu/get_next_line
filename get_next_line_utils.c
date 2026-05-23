@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:43:09 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 17:50:31 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:23:56 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(char *s)
 	return (index);
 }
 
-char	*ft_strncat(char *dest, char *buf, size_t n)
+char	*append_to_str(char *dest, char *buf, size_t n)
 {
 	char	*new_buffer;
 	size_t	index;
@@ -46,10 +46,11 @@ char	*ft_strncat(char *dest, char *buf, size_t n)
 		while (n--)
 			new_buffer[index++] = *buf++;
 	new_buffer[index] = 0;
-	return (free(dest), dest = new_buffer, dest);
+	free(dest);
+	return (new_buffer);
 }
 
-char	*ft_strndup(char *s1, size_t n)
+char	*str_duplicate_n(char *s1, size_t n)
 {
 	char	*new_buffer;
 	size_t	index;
@@ -69,12 +70,12 @@ char	*ft_strndup(char *s1, size_t n)
 	return (new_buffer);
 }
 
-char	*find_end(char *s1, int str_end)
+char	*find_end(char *s1, int find_null)
 {
 	while (*s1)
 		if (*s1++ == '\n')
 			return (s1);
-	if (str_end)
+	if (find_null)
 		return (s1);
 	else
 		return (0);

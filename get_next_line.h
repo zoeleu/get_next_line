@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:43:07 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 18:21:09 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:23:37 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 char	*get_next_line(int fd);
 
 size_t	ft_strlen(char *s);
-char	*ft_strncat(char *dest, char *buf, size_t n);
-char	*ft_strndup(char *s1, size_t n);
+char	*append_to_str(char *dest, char *buf, size_t n);
+char	*str_duplicate_n(char *s1, size_t n);
 char	*find_end(char *s1, int str_end);
 char	*cleanup(char **stash_ptr, int clone_stash, char **free_buf);
 char	*initialize_buffer(void);

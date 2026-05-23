@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:43:11 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 18:20:04 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:23:37 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_next_line(int fd)
 
 	read_buffer = initialize_buffer();
 	if (!stash)
-		stash = ft_strndup("", (size_t)(-1));
+		stash = str_duplicate_n("", (size_t)(-1));
 	while (!find_end(stash, 0))
 	{
 		read_result = read(fd, read_buffer, BUFFER_SIZE);
@@ -30,12 +30,12 @@ char	*get_next_line(int fd)
 			cleanup(&stash, 0, &read_buffer);
 		if (read_result <= 0)
 			break ;
-		stash = ft_strncat(stash, read_buffer, read_result);
+		stash = append_to_str(stash, read_buffer, read_result);
 	}
 	if (read_result < 1)
 		return (cleanup(&stash, 1, &read_buffer));
-	line = ft_strndup(stash, find_end(stash, 1) - stash);
-	buf = ft_strndup(find_end(stash, 1), (size_t)(-1));
+	line = str_duplicate_n(stash, find_end(stash, 1) - stash);
+	buf = str_duplicate_n(find_end(stash, 1), (size_t)(-1));
 	cleanup(&stash, 0, &read_buffer);
 	stash = buf;
 	return (line);
@@ -53,14 +53,12 @@ char	*cleanup(char **stash_ptr, int clone_stash, char **free_buf)
 		*free_buf = 0;
 	}
 	if (!stash)
-	{
 		return (NULL);
-	}
 	if (clone_stash && stash && ft_strlen(stash) != 0)
 	{
-		buf = ft_strndup(stash, (size_t)(-1));
+		buf = str_duplicate_n(stash, (size_t)(-1));
 		free(stash);
-		*stash_ptr = ft_strndup("", (size_t)(-1));
+		*stash_ptr = str_duplicate_n("", (size_t)(-1));
 		return (buf);
 	}
 	free(stash);
