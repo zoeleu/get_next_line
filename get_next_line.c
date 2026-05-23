@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:43:11 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 18:00:30 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:09:47 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ char	*cleanup(char **stash_ptr, int clone_stash, char *free_buf)
 	}
 	free(free_buf);
 	free(stash);
+	*stash_ptr = NULL;
 	return (NULL);
 }

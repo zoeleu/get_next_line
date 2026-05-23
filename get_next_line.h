@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 14:43:07 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 17:58:37 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:03:59 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10000000
+#  define BUFFER_SIZE 1
 # endif
 
 # include <stdlib.h>

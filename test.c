@@ -6,7 +6,7 @@
 /*   By: zleullie <zleullie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:53:09 by zleullie          #+#    #+#             */
-/*   Updated: 2026/05/23 15:55:42 by zleullie         ###   ########.fr       */
+/*   Updated: 2026/05/23 18:03:43 by zleullie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	char	*str;
 	int		fd;
 
-	fd = open("hello.txt", O_RDONLY);
+	if (argc == 2)
+		fd = open(argv[1], O_RDONLY);
+	else
+		fd = open("hello.txt", O_RDONLY);
 	str = NULL;
 	while (1)
 	{
