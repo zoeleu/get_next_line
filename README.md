@@ -4,7 +4,7 @@
 Reading a line from a file descriptor is way too tedious.
 
 ## Description
-The **get_next_line** project involves creating a C function that reads and returns a single line from a file descriptor. The main goal is to introduce the concept of static variables and state retention in C, while handling dynamic buffer allocations safely.
+The get_next_line project involves creating a C function that reads and returns a single line from a file descriptor. The main goal is to introduce the concept of static variables and state retention in C, while handling dynamic buffer allocations safely.
 
 ## Instructions
 To integrate this project into your C programs, include the project header:
